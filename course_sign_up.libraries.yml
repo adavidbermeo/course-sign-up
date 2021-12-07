@@ -1,0 +1,8 @@
+
+drupal.custom-libraries:
+  version: 1.x
+  css:
+    theme:
+      css/custom-styles.css: {}
+  dependencies:
+    - core/jquery

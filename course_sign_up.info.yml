@@ -1,0 +1,6 @@
+name: Course SignUp Module
+description: Customized module to register the classes of a user's course 
+package: Custom
+type: module
+version: 1.0
+core_version_requirement: ^8 || ^9

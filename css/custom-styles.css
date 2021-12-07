@@ -1,0 +1,13 @@
+#my_form_wrapper{
+    text-align: left;
+    padding: 20px;
+}
+#results-header{
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+#results-header .col-header{
+    width: 33%;
+    display: inline-block;
+}

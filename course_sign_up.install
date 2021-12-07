@@ -1,0 +1,98 @@
+<?php 
+
+/**
+* Implements hook_schema().
+ */
+
+function course_sign_up_schema() {
+
+    $schema['course_sign_up'] = array(
+       'description' => 'The base table for the sample user registry',
+         'fields' => array(
+             'register_id' => array(
+                'description' => 'Register ID',
+                'type' => 'serial',
+                'unsigned' => TRUE,
+                'not null' => TRUE,
+         ),
+
+         'student_id' => array(
+            'description' => 'Student id',
+            'type' => 'varchar',
+            'length' => 400,
+            'not null' => TRUE,
+            'default' => '',
+          ),
+         
+         'class_subject' => array(
+            'description' => 'Class subject to be added',
+            'type' => 'varchar',
+            'length' => 400,
+            'not null' => TRUE,
+            'default' => '',
+         ),
+
+          'class_topic' => array(
+            'description' => 'Class topic',
+            'type' => 'varchar',
+            'length' => 400,
+            'not null' => TRUE,
+            'default' => '',
+         ),
+
+          'class_timeslot' => array(
+            'description' => 'Class timeslot',
+            'type' => 'varchar',
+            'length' => 400,
+            'not null' => TRUE,
+            'default' => '',
+         )
+ 
+     ),
+     'primary key' => array('register_id'),
+     'foreign keys' => array(
+      'fk_uid' => array(
+        'table' => 'students',
+        'columns' => array('student_id' => 'student_id'),
+        'on update' => 'cascade',
+        'on delete' => 'set null',
+      ),
+    ),
+   );
+
+   $schema['students'] = array(
+      'description' => 'The base table to register students',
+        'fields' => array(
+            'student_id' => array(
+               'description' => 'Register ID',
+               'type' => 'serial',
+               'unsigned' => TRUE,
+               'not null' => TRUE,
+        ),
+
+        'username' => array(
+           'description' => 'User name associated with the class',
+           'type' => 'varchar',
+           'length' => 400,
+           'not null' => TRUE,
+           'default' => '',
+         ),
+
+        'email' => array(
+           'description' => 'E-mail address used by the user',
+           'type' => 'varchar',
+           'length' => 400,
+           'not null' => TRUE,
+           'default' => '',
+        ),
+
+    ),
+    'primary key' => array('student_id'),
+    'unique keys' => array(
+      'email'     => array('email')
+      ),
+  );
+
+   return $schema;
+
+}

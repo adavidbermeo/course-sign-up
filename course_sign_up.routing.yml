@@ -1,0 +1,15 @@
+course_sign_up.main_page:
+  path: '/sign-up/page/{student_id}'
+  defaults:
+    _controller: '\Drupal\course_sign_up\Controller\SignUpPageController::content'
+    _title: 'Rootstack | Course Sign Up'
+  requirements:
+    _permission: 'access content'
+
+course_sign_up.sign_up_list:
+  path: '/sign-up/list'
+  defaults:
+    _controller: '\Drupal\course_sign_up\Controller\SignUpListController::content'
+    _title: 'Rootstack | Sign Up List'
+  requirements:
+    _permission: 'access content'

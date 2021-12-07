@@ -1,0 +1,25 @@
+<div id="form-container">
+{{ signup_form }}
+</div>
+{# Results table #}
+<div class="container">
+    <div id="results-header">
+      <div class="col-header"> <b> Student ID: </b> {{ class_schedule.student_id }} </div>
+      <div class="col-header"> <b> Username: </b> {{ class_schedule.username }}  </div>
+      <div class="col-header"> <b> Email: </b> {{ class_schedule.email }} </div> 
+    </div>
+  <table>
+    <tr>
+      <th class="col-sm"> Class Subject </th>
+      <th class="col-sm"> Class Topic </th>
+      <th class="col-sm"> Class Timeslot </th>
+    </tr>
+    {% for key,value in class_schedule.class_subject %}
+    <tr>
+      <td class="col-sm"> {{ class_schedule.class_subject[key] }} </td>
+      <td class="col-sm"> {{ class_schedule.class_topic[key] }} </td>
+      <td class="col-sm"> {{ class_schedule.class_timeslot[key] }} </td>
+    </tr>
+    {% endfor %}
+  </table> 
+</div>

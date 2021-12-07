@@ -1,0 +1,18 @@
+<div class="container">
+    <table>
+        <tr>
+            <th class="col-sm"> Student ID </th>
+            <th class="col-sm"> Username </th>
+            <th class="col-sm"> Email </th>
+            <th class="col-sm"> Course SignUp Form </th>
+        </tr>
+        {% for key,value in signup_list %}
+            <tr>
+                <td class="col-sm"> {{ signup_list[key].student_id }} </td>
+                <td class="col-sm"> {{ signup_list[key].username }} </td>
+                <td class="col-sm"> {{ signup_list[key].email }} </td>
+                <td class="col-sm"> <a href="/sign-up/page/{{ signup_list[key].student_id }}" target="_blank"> Link </a></td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
